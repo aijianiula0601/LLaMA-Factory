@@ -7,20 +7,22 @@ curdir=$(pwd)
 echo "curdir:$curdir"
 cd "$curdir" || exit
 
-
 cd ..
 
+output_dir="/mnt/cephfs/hjh/train_record/nlp/llamafactory/huggyllama_llama-7b/lora/sft"
+model_name_or_path="huggyllama/llama-7b"
+dataset_dir="./data"
 
 CUDA_VISIBLE_DEVICES=0 python src/train.py \
     --stage sft \
     --do_train \
-    --model_name_or_path huggyllama/llama-7b \
+    --model_name_or_path ${model_name_or_path} \
     --dataset identity \
-    --dataset_dir ./data \
+    --dataset_dir ${dataset_dir} \
     --template default \
     --finetuning_type lora \
     --lora_target q_proj,v_proj \
-    --output_dir ../models/Mistral-7B/lora/sft \
+    --output_dir ${output_dir} \
     --overwrite_cache \
     --overwrite_output_dir \
     --cutoff_len 1024 \
