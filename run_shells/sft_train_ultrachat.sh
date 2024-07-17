@@ -10,10 +10,11 @@ cd ..
 
 output_dir="/mnt/cephfs/hjh/train_record/nlp/llamafactory/huggyllama_llama-7b/lora/sft"
 model_name_or_path="huggyllama/llama-7b"
+#model_name_or_path="/mnt/cephfs/hjh/huggingface_models/nlp/llama3/Meta-Llama-3-70B-Instruct"
 dataset_dir="./data"
-dataset_name="identity"
+dataset_name="ultrachat_200k"
 
-CUDA_VISIBLE_DEVICES=0 python src/train.py \
+CUDA_VISIBLE_DEVICES=1 python src/train.py \
   --stage sft \
   --do_train \
   --model_name_or_path ${model_name_or_path} \
@@ -42,4 +43,5 @@ CUDA_VISIBLE_DEVICES=0 python src/train.py \
   --max_samples 3000 \
   --val_size 0.1 \
   --plot_loss \
-  --fp16
+  --fp16 \
+  --split train_sft
