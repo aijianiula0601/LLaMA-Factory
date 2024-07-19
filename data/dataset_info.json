@@ -561,5 +561,19 @@
       "prompt": "content"
     },
     "folder": "python"
+  },
+  "bigodata_0719_language_3_turns": {
+    "file_name": "/data1/zengjianming/workspace/bigo_llm_finetune/llama_factory/data/bigodata_0719_language_3_turns.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "system": "prompt"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant"
+    }
   }
 }

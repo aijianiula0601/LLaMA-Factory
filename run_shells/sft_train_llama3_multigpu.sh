@@ -15,13 +15,13 @@ cd ..
 output_dir="/mnt/cephfs/hjh/train_record/nlp/llamafactory/huggyllama_llama-7b/lora/sft"
 model_name_or_path="/data1/llm-ckpt/Meta-Llama-3-8B-Instruct/"
 dataset_dir="./data"
-dataset_name="ultrachat_200k"
+dataset_name="bigodata_0719_language_3_turns"
 template="llama3"
 
 
-#CUDA_VISIBLE_DEVICES=6,7 \
+CUDA_VISIBLE_DEVICES=6,7 \
 torchrun \
---nproc_per_node 8 \
+--nproc_per_node 2 \
 --nnodes 1 \
 --node_rank 0 \
 --master_addr localhost \
@@ -56,4 +56,4 @@ src/train.py \
   --val_size 0.1 \
   --plot_loss \
   --fp16 \
-  --split train_sft
+  --split train
