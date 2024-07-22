@@ -4,4 +4,7 @@
 
 # 参考
 
-参考的shell训练命令链接：[url](https://www.superteams.ai/blog/a-definitive-guide-to-fine-tuning-llms-using-axolotl-and-llama-factory)
+参考的shell训练命令链接：
+
+- [url_1](https://www.superteams.ai/blog/a-definitive-guide-to-fine-tuning-llms-using-axolotl-and-llama-factory)
+- [url_2](https://qwen.readthedocs.io/en/latest/training/SFT/llama_factory.html)

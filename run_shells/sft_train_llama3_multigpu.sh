@@ -13,13 +13,17 @@ cd "$curdir" || exit
 cd ..
 
 output_dir="/mnt/cephfs/hjh/train_record/nlp/llamafactory/huggyllama_llama-7b/lora/sft"
-model_name_or_path="/data1/llm-ckpt/Meta-Llama-3-8B-Instruct/"
+# a100_1
+#model_name_or_path="/data1/llm-ckpt/Meta-Llama-3-8B-Instruct/"
+# a100_2
+model_name_or_path="/data1/nfs/Meta-Llama-3-8B-Instruct/"
+
 dataset_dir="./data"
 dataset_name="bigodata_0719_language_3_turns"
 template="llama3"
 
 
-CUDA_VISIBLE_DEVICES=6,7 \
+CUDA_VISIBLE_DEVICES=1,2,3 \
 torchrun \
 --nproc_per_node 2 \
 --nnodes 1 \
