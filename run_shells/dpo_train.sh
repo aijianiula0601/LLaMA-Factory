@@ -10,6 +10,7 @@ cd ..
 
 output_dir="/mnt/cephfs/hjh/train_record/nlp/llamafactory/huggyllama_llama-7b/lora/dpo"
 model_name_or_path="/data1/llm-ckpt/Mistral-7B-v0.1"
+adapter_name_or_path="/mnt/cephfs/hjh/train_record/nlp/llamafactory/huggyllama_llama-7b/lora/sft"
 dataset_dir="./data"
 dataset_name="dpo_en_demo"
 
@@ -35,9 +36,12 @@ torchrun --nnodes 1 --node_rank 0 --nproc_per_node 4 --master_addr 127.0.0.1 --m
 --max_grad_norm 1.0 \
 --max_samples 100000 \
 --model_name_or_path ${model_name_or_path} \
+--adapter_name_or_path ${adapter_name_or_path} \
 --num_train_epochs 3.0 \
 --optim adamw_torch \
 --output_dir ${output_dir} \
+--overwrite_cache \
+--overwrite_output_dir \
 --packing false \
 --per_device_train_batch_size 2 \
 --plot_loss true \
