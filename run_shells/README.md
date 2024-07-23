@@ -14,4 +14,5 @@
 
 参考
 
-- [url](https://huggingface.co/blog/mlabonne/orpo-llama-3)
+- [url](https://huggingface.co/blog/mlabonne/orpo-llama-3) -参考这个无法训练起来
+- 启动训练页面，打印出训练的shell脚本
